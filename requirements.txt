@@ -1,0 +1,9 @@
+matplotlib
+pandas
+fastapi
+uvicorn
+streamlit
+pytest
+numpy
+prophet
+joblib
