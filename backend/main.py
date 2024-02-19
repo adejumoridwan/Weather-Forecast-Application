@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Form
 import uvicorn
 
 from model import convert, predict
@@ -11,7 +11,7 @@ app = FastAPI()
     "/predict",
     status_code=200,
 )
-async def get_prediction(weather_variable: str, days: int):
+async def get_prediction(weather_variable: str = Form(...), days: int = Form(...)):
     prediction_list = predict(weather_variable, days)
 
     if not prediction_list:
