@@ -7,3 +7,4 @@ pytest
 numpy
 prophet
 joblib
+plotly

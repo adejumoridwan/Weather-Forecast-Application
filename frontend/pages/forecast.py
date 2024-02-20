@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 
+
 # Define the FastAPI server URL
 FASTAPI_URL = "http://localhost:8000"  # Change this to match your FastAPI server URL
 
@@ -15,7 +16,7 @@ def get_prediction(weather_variable, days):
 
 # Streamlit UI
 def main():
-    st.title("FastAPI Endpoint Viewer")
+    st.title("Forecast")
 
     # User inputs
     weather_variable = st.text_input("Weather Variable", "")
@@ -26,7 +27,7 @@ def main():
         if weather_variable and days:  # Check if both fields are filled
             prediction = get_prediction(weather_variable, days)
             for key, value in prediction["forecast"].items():
-                st.write(key, "-", value)
+                st.write(key, "-", f"{value:.2f}")
         else:
             st.error("Please provide values for both Weather Variable and Days.")
 
