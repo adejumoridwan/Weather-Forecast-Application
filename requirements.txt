@@ -8,4 +8,4 @@ numpy
 prophet
 joblib
 plotly
-python-multiparts
+python-multipart
